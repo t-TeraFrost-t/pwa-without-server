@@ -10,7 +10,7 @@ async function send() {
   // Register Service Worker
   console.log("Registering service worker...");
   const register = await navigator.serviceWorker.register("public/sw.js", {
-    scope: "/public/"
+    scope: "/public"
   });
   console.log("Service Worker Registered...");
 
@@ -21,6 +21,9 @@ async function send() {
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
   console.log("Push Registered...");
+  
+
+ 
 
 }
 
