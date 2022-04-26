@@ -33,6 +33,6 @@ self.addEventListener('install', evt => {
       body: "Notified by Sum Form!",
       icon: "https://github.com/iamshaunjp/pwa-tutorial/blob/lesson-3/img/icons/icon-72x72.png?raw=true"
     });
-  })
+  },5*1000); 
    
  
