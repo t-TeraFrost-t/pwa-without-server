@@ -9,7 +9,7 @@ if('serviceWorker' in navigator){
 async function send() {
   // Register Service Worker
   console.log("Registering service worker...");
-  const register = await navigator.serviceWorker.register("/public/sw.js", {
+  const register = await navigator.serviceWorker.register("public/sw.js", {
     scope: "/"
   });
   console.log("Service Worker Registered...");
@@ -24,7 +24,17 @@ async function send() {
   
 
  
-  
+  await setInterval(async ()=>{
+    console.log("Sending Push...");
+    await fetch("/notify", {
+      method: "POST",
+      body: JSON.stringify(subscription),
+      headers: {
+        "content-type": "application/json"
+      }
+    });
+    console.log("Push Sent...");
+  },5*1000); 
 }
 
 function urlBase64ToUint8Array(base64String) {
