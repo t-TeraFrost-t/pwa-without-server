@@ -27,7 +27,7 @@ self.addEventListener('install', evt => {
       );
   });
 
-  await setInterval(async ()=>{
+   setInterval( ()=>{
     console.log("Push Recieved...");
     self.registration.showNotification('Hi Angel', {
       body: "Notified by Sum Form!",
