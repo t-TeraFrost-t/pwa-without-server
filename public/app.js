@@ -21,20 +21,7 @@ async function send() {
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
   console.log("Push Registered...");
-  
 
- 
-  await setInterval(async ()=>{
-    console.log("Sending Push...");
-    await fetch("/notify", {
-      method: "POST",
-      body: JSON.stringify(subscription),
-      headers: {
-        "content-type": "application/json"
-      }
-    });
-    console.log("Push Sent...");
-  },5*1000); 
 }
 
 function urlBase64ToUint8Array(base64String) {
