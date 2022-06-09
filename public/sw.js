@@ -27,9 +27,9 @@ self.addEventListener('install', evt => {
       );
   });
 
-  await setInterval( async ()=>{
+setInterval(  ()=>{
     console.log("Push Recieved...");
-    await self.registration.showNotification('Hi Angel', {
+     self.registration.showNotification('Hi Angel', {
       body: "Notified by Sum Form!",
       icon: "https://github.com/iamshaunjp/pwa-tutorial/blob/lesson-3/img/icons/icon-72x72.png?raw=true"
     });
