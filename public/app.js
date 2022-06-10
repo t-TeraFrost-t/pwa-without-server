@@ -21,7 +21,17 @@ async function send() {
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   });
   console.log("Push Registered...");
-  
+  Notification.requestPermission().then((result) => {
+    if (result === 'granted') {
+      setInterval( async ()=>{
+        new Notification('Hi Angel',  {
+          body: "Notified by Sum Form!",
+          icon: "https://github.com/iamshaunjp/pwa-tutorial/blob/lesson-3/img/icons/icon-72x72.png?raw=true"
+          
+        });
+      },5*1000); 
+    }
+  });
 
  
 
